@@ -1,6 +1,8 @@
 const express = require("express");
-const messagesRouter = require("./routers/messagesRouter"); //look here
 const bodyParser = require("body-parser");
+const messagesRouter = require("./routers/messagesRouter");
+const utilsRouter = require("./routers/utilsRouter");
+
 
 const app = express();
 // for parsing application/json
@@ -9,7 +11,8 @@ app.use(bodyParser.json());
 // for parsing application/xwww-
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/messages', messagesRouter); //and look here too
+app.use('/messages', messagesRouter);
+app.use('/utils', utilsRouter);
 
 const port = process.env.PORT || 8080;
 
