@@ -46,7 +46,7 @@ router.post("/send", (req, res) => {
 })
 
 router.get("/labels", async (req, res) => {
-    const {link} = req.body;
+    const {link} = req.query;
     if (!link) {
         return res.status(400).send("Missing Parametres");
     }
